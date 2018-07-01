@@ -19,12 +19,12 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/feed">
-            Post Feed
+            Job Feed
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/dashboard">
-            Dashboard
+          <Link className="nav-link" to="/account">
+            Edit Profile
           </Link>
         </li>
         <li className="nav-item">
@@ -33,13 +33,6 @@ class Navbar extends Component {
             onClick={this.onLogoutClick.bind(this)}
             className="nav-link"
           >
-            <img
-              className="rounded-circle"
-              src={user.avatar}
-              alt={user.name}
-              style={{ width: '25px', marginRight: '5px' }}
-              title="You must have a Gravatar connected to your email to display an image"
-            />{' '}
             Logout
           </a>
         </li>
@@ -65,7 +58,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Social Network
+            &lt;RemotelyJS&gt;
           </Link>
           <button
             className="navbar-toggler"
@@ -79,9 +72,15 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
+                <Link className="nav-link" to="/hiring">
                   {' '}
-                  Developers
+                  Need developers?
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/guide">
+                  {' '}
+                  Employment Guide
                 </Link>
               </li>
             </ul>

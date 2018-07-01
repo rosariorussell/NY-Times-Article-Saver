@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 // Create Schema
 const ProfileSchema = new Schema({
@@ -30,9 +30,6 @@ const ProfileSchema = new Schema({
     required: true
   },
   bio: {
-    type: String
-  },
-  githubusername: {
     type: String
   },
   experience: [
@@ -95,9 +92,6 @@ const ProfileSchema = new Schema({
     }
   ],
   social: {
-    youtube: {
-      type: String
-    },
     twitter: {
       type: String
     },
@@ -107,7 +101,7 @@ const ProfileSchema = new Schema({
     linkedin: {
       type: String
     },
-    instagram: {
+    github: {
       type: String
     }
   },
@@ -115,6 +109,6 @@ const ProfileSchema = new Schema({
     type: Date,
     default: Date.now
   }
-});
+})
 
-module.exports = Profile = mongoose.model('profile', ProfileSchema);
+module.exports = Profile = mongoose.model('profile', ProfileSchema)

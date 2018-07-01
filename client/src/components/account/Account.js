@@ -8,7 +8,7 @@ import ProfileActions from './ProfileActions';
 import Experience from './Experience';
 import Education from './Education';
 
-class Dashboard extends Component {
+class Account extends Component {
   componentDidMount() {
     this.props.getCurrentProfile();
   }
@@ -17,22 +17,21 @@ class Dashboard extends Component {
     this.props.deleteAccount();
   }
 
+
   render() {
     const { user } = this.props.auth;
     const { profile, loading } = this.props.profile;
 
-    let dashboardContent;
+    let displayContent;
 
     if (profile === null || loading) {
-      dashboardContent = <Spinner />;
+      displayContent = <Spinner />;
     } else {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
-        dashboardContent = (
+        displayContent = (
           <div>
-            <p className="lead text-muted">
-              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
-            </p>
+            <p className="lead text-muted">Welcome {user.name}</p>
             <ProfileActions />
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
@@ -47,10 +46,9 @@ class Dashboard extends Component {
         );
       } else {
         // User is logged in but has no profile
-        dashboardContent = (
+        displayContent = (
           <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
-            <p>You have not yet setup a profile, please add some info</p>
+            <p className="lead text-muted">Welcome {user.name}, you have not yet setup a profile.</p>
             <Link to="/create-profile" className="btn btn-lg btn-info">
               Create Profile
             </Link>
@@ -60,12 +58,12 @@ class Dashboard extends Component {
     }
 
     return (
-      <div className="dashboard">
+      <div className="account">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
-              {dashboardContent}
+              <h1 className="display-4">Your Profile</h1>
+              {displayContent}
             </div>
           </div>
         </div>
@@ -74,7 +72,7 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
+Account.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   deleteAccount: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
@@ -87,5 +85,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(
-  Dashboard
+  Account
 );
