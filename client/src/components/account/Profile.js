@@ -1,0 +1,11 @@
+// handle: this.state.handle,
+// company: this.state.company,
+// website: this.state.website,
+// location: this.state.location,
+// status: this.state.status,
+// skills: this.state.skills,
+// bio: this.state.bio,
+// twitter: this.state.twitter,
+// facebook: this.state.facebook,
+// linkedin: this.state.linkedin,
+// github: this.state.github

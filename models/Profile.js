@@ -7,11 +7,6 @@ const ProfileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  handle: {
-    type: String,
-    required: true,
-    max: 40
-  },
   company: {
     type: String
   },
@@ -111,4 +106,6 @@ const ProfileSchema = new Schema({
   }
 })
 
-module.exports = Profile = mongoose.model('profile', ProfileSchema)
+const Profile = mongoose.model('profile', ProfileSchema)
+
+module.exports = Profile
