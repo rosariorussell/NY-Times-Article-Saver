@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
 import Spinner from '../common/Spinner';
 import ProfileActions from './ProfileActions';
+import Profile from './Profile';
 import Experience from './Experience';
 import Education from './Education';
 
@@ -33,6 +34,18 @@ class Account extends Component {
           <div>
             <p className="lead text-muted">Welcome {user.name}</p>
             <ProfileActions />
+            <Profile
+              company={profile.company}
+              website={profile.website}
+              location={profile.location}
+              status={profile.status}
+              skills={profile.skills}
+              bio={profile.bio}
+              linkedin={profile.linkedin}
+              github={profile.github}
+              twitter={profile.twitter}
+              facebook={profile.facebook}
+            />
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
             <div style={{ marginBottom: '60px' }} />
@@ -44,6 +57,7 @@ class Account extends Component {
             </button>
           </div>
         );
+
       } else {
         // User is logged in but has no profile
         displayContent = (

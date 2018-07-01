@@ -68,6 +68,22 @@ class CreateProfile extends Component {
       socialInputs = (
         <div>
           <InputGroup
+            placeholder="Linkedin Profile URL"
+            name="linkedin"
+            icon="fab fa-linkedin"
+            value={this.state.linkedin}
+            onChange={this.onChange}
+            error={errors.linkedin}
+          />
+          <InputGroup
+            placeholder="Github Profile URL"
+            name="github"
+            icon="fab fa-github"
+            value={this.state.github}
+            onChange={this.onChange}
+            error={errors.github}
+          />
+          <InputGroup
             placeholder="Twitter Profile URL"
             name="twitter"
             icon="fab fa-twitter"
@@ -84,25 +100,6 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             error={errors.facebook}
           />
-
-          <InputGroup
-            placeholder="Linkedin Profile URL"
-            name="linkedin"
-            icon="fab fa-linkedin"
-            value={this.state.linkedin}
-            onChange={this.onChange}
-            error={errors.linkedin}
-          />
-
-                    <InputGroup
-            placeholder="Github Profile URL"
-            name="github"
-            icon="fab fa-github"
-            value={this.state.github}
-            onChange={this.onChange}
-            error={errors.github}
-          />
-
         </div>
       );
     }

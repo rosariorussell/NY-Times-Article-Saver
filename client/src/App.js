@@ -19,14 +19,12 @@ import Hiring from './components/hiring/Hiring';
 import Guide from './components/guide/Guide';
 
 import Account from './components/account/Account';
-import CreateProfile from './components/create-profile/CreateProfile';
-import EditProfile from './components/edit-profile/EditProfile';
-import AddExperience from './components/add-credentials/AddExperience';
-import AddEducation from './components/add-credentials/AddEducation';
+import CreateProfile from './components/profile/CreateProfile';
+import EditProfile from './components/profile/EditProfile';
+import AddExperience from './components/profile/AddExperience';
+import AddEducation from './components/profile/AddEducation';
 import Feed from './components/jobListings/Feed';
 
-
-import NotFound from './components/not-found/NotFound';
 
 import './App.css';
 
@@ -101,7 +99,6 @@ class App extends Component {
                 />
               </Switch>
 
-              <Route exact path="/not-found" component={NotFound} />
             </div>
             <Footer />
           </div>
