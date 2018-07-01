@@ -18,11 +18,11 @@ import Login from './components/auth/Login';
 import Hiring from './components/hiring/Hiring';
 import Guide from './components/guide/Guide';
 
-import Account from './components/account/Account';
-import CreateProfile from './components/profile/CreateProfile';
-import EditProfile from './components/profile/EditProfile';
-import AddExperience from './components/profile/AddExperience';
-import AddEducation from './components/profile/AddEducation';
+import Account from './components/displayAccount/Account';
+import CreateProfile from './components/updateProfile/CreateProfile';
+import EditProfile from './components/updateProfile/EditProfile';
+import AddExperience from './components/updateProfile/AddExperience';
+import AddEducation from './components/updateProfile/AddEducation';
 import Feed from './components/jobListings/Feed';
 
 
