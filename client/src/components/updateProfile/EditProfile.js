@@ -158,15 +158,14 @@ class CreateProfile extends Component {
                   error={errors.website}
                 />
                 <TextFieldGroup
-                  placeholder="City, State (eg. New York, NY)"
+                  placeholder="City, State (New York, NY)"
                   name="location"
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
                 />
-                <TextFieldGroup
-                  placeholder="* Skills - Please use comma separated values (eg.
-                    JavaScript, Node, React"
+                <TextAreaFieldGroup
+                  placeholder="* Skills - Please use comma separated values (JavaScript, Node, React)"
                   name="skills"
                   value={this.state.skills}
                   onChange={this.onChange}
@@ -180,41 +179,41 @@ class CreateProfile extends Component {
                   error={errors.bio}
                 />
 
-          <InputGroup
-            placeholder="Linkedin Profile URL"
-            name="linkedin"
-            icon="fab fa-linkedin"
-            value={this.state.linkedin}
-            onChange={this.onChange}
-            error={errors.linkedin}
-          />
+                <InputGroup
+                  placeholder="Linkedin Profile URL"
+                  name="linkedin"
+                  icon="fab fa-linkedin"
+                  value={this.state.linkedin}
+                  onChange={this.onChange}
+                  error={errors.linkedin}
+                />
 
-          <InputGroup
-            placeholder="Github Profile URL"
-            name="github"
-            icon="fab fa-github"
-            value={this.state.github}
-            onChange={this.onChange}
-            error={errors.github}
-          />
+                <InputGroup
+                  placeholder="Github Profile URL"
+                  name="github"
+                  icon="fab fa-github"
+                  value={this.state.github}
+                  onChange={this.onChange}
+                  error={errors.github}
+                />
 
-          <InputGroup
-            placeholder="Twitter Profile URL"
-            name="twitter"
-            icon="fab fa-twitter"
-            value={this.state.twitter}
-            onChange={this.onChange}
-            error={errors.twitter}
-          />
+                <InputGroup
+                  placeholder="Twitter Profile URL"
+                  name="twitter"
+                  icon="fab fa-twitter"
+                  value={this.state.twitter}
+                  onChange={this.onChange}
+                  error={errors.twitter}
+                />
 
-          <InputGroup
-            placeholder="Facebook Profile URL"
-            name="facebook"
-            icon="fab fa-facebook"
-            value={this.state.facebook}
-            onChange={this.onChange}
-            error={errors.facebook}
-          />
+                <InputGroup
+                  placeholder="Facebook Profile URL"
+                  name="facebook"
+                  icon="fab fa-facebook"
+                  value={this.state.facebook}
+                  onChange={this.onChange}
+                  error={errors.facebook}
+                />
 
 
                 <input
