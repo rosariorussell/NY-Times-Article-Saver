@@ -39,7 +39,7 @@ export default class Profile extends Component {
 
     return (
       <div>
-        <h4 className="mb-4">Profile details</h4>
+        <h4 className="mb-4">Profile</h4>
 
         <ul>
           {profile}
