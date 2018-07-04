@@ -4,7 +4,7 @@ export default class JobListing extends Component {
   render() {
     return (
       <div>
-        <h2>Individual Job listing</h2>
+        <h2>Job listing subcomponent to loop through</h2>
       </div>
     )
   }

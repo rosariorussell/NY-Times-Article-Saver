@@ -16,6 +16,7 @@ import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Hiring from './components/hiring/Hiring';
+import Response from './components/hiring/Response';
 import Guide from './components/guide/Guide';
 
 import Account from './components/displayAccount/Account';
@@ -61,6 +62,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/hiring" component={Hiring} />
+              <Route exact path="/response" component={Response} />
               <Route exact path="/guide" component={Guide} />
 
 

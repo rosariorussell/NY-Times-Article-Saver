@@ -37,3 +37,15 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+a.active {
+  background-color: green !important;
+}
+
+#v-pills-tab a {
+  color: green;
+}
+
+#v-pills-tab a.active {
+  color: white;
+}

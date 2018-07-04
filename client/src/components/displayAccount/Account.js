@@ -63,7 +63,7 @@ class Account extends Component {
         displayContent = (
           <div>
             <p className="lead text-muted">Welcome {user.name}, you have not yet setup a profile.</p>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
+            <Link to="/create-profile" className="btn btn-lg btn-success">
               Create Profile
             </Link>
           </div>

@@ -5,7 +5,7 @@ export default class Feed extends Component {
   render() {
     return (
       <div>
-        <h1>Job Listings</h1>
+        <h1 className="display-4 text-center">Job Listings</h1>
         <JobListing />
 
       </div>
