@@ -1,20 +1,19 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
-const passport = require('passport')
-const path = require('path')
+var express = require('express')
+var bodyParser = require('body-parser')
+var mongoose = require('mongoose')
 
-const users = require('./routes/api/users')
-const profile = require('./routes/api/profile')
-const inquiry = require('./routes/api/inquiry')
+var Article = require('./models/Article.js')
 
-const app = express()
+var app = express()
+var PORT = process.env.PORT || 3000
 
-// Body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.text())
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
 
-// DB Config
+app.use(express.static('./public'))
+
 const db = require('./config/keys').mongoURI
 
 // Connect to MongoDB
@@ -23,27 +22,45 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err))
 
-// Passport middleware
-app.use(passport.initialize())
+app.get('/', function (req, res) {
+  res.sendFile('./public/index.html')
+})
 
-// Passport Config
-require('./config/passport')(passport)
+app.get('/api/saved', function (req, res) {
+  Article.find({})
+    .exec(function (err, doc) {
+      if (err) {
+        console.log(err)
+      } else {
+        res.send(doc)
+      }
+    })
+})
 
-// Use Routes
-app.use('/api/users', users)
-app.use('/api/profile', profile)
-app.use('/api/inquiry', inquiry)
+app.post('/api/saved', function (req, res) {
+  var newArticle = new Article(req.body)
 
-// Server static assets if in production
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/build'))
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  newArticle.save(function (err, doc) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send(doc._id)
+    }
   })
-}
+})
 
-const port = process.env.PORT || 5000
+app.delete('/api/saved/', function (req, res) {
+  var url = req.param('url')
 
-app.listen(port, () => console.log(`Server running on port ${port}`))
+  Article.find({ 'url': url }).remove().exec(function (err, data) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send('Deleted')
+    }
+  })
+})
+
+app.listen(PORT, function () {
+  console.log('App listening on PORT: ' + PORT)
+})
